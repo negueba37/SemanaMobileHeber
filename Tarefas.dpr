@@ -3,7 +3,8 @@ program Tarefas;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  untLogin in 'untLogin.pas' {FrmLogin};
+  untLogin in 'untLogin.pas' {FrmLogin},
+  untPrincipal in 'untPrincipal.pas' {frmPrincipal};
 
 {$R *.res}
 

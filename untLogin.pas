@@ -42,13 +42,13 @@ type
     SpeedButton1: TSpeedButton;
     Label7: TLabel;
     Layout9: TLayout;
-    Image4: TImage;
-    Image5: TImage;
-    Image6: TImage;
-    Image7: TImage;
-    Image8: TImage;
-    Image9: TImage;
-    Circle1: TCircle;
+    imgIcone1: TImage;
+    imgIcone2: TImage;
+    imgIcone3: TImage;
+    imgIcone4: TImage;
+    imgIcone5: TImage;
+    imgIcone6: TImage;
+    cSelecao: TCircle;
     Layout10: TLayout;
     Label8: TLabel;
     Layout11: TLayout;
@@ -56,8 +56,11 @@ type
     procedure FormCreate(Sender: TObject);
     procedure lblCriarContaClick(Sender: TObject);
     procedure Label8Click(Sender: TObject);
+    procedure imgIcone1Click(Sender: TObject);
+    procedure btnLoginClick(Sender: TObject);
+
   private
-    { Private declarations }
+    procedure SelecioneIcone(Sender:TObject);
   public
     { Public declarations }
   end;
@@ -69,10 +72,28 @@ implementation
 
 {$R *.fmx}
 
+uses untPrincipal;
+
+procedure TFrmLogin.btnLoginClick(Sender: TObject);
+begin
+  if not Assigned(frmPrincipal) then
+    Application.CreateForm(TfrmPrincipal,frmPrincipal);
+
+  Application.MainForm := frmPrincipal;
+  frmPrincipal.Show;
+  FrmLogin.Close;
+
+end;
+
 procedure TFrmLogin.FormCreate(Sender: TObject);
 begin
   TabControl.TabPosition := TTabPosition.None;
   TabControl.ActiveTab   := TabLogin;
+end;
+
+procedure TFrmLogin.imgIcone1Click(Sender: TObject);
+begin
+SelecioneIcone(Sender);
 end;
 
 procedure TFrmLogin.Label8Click(Sender: TObject);
@@ -84,6 +105,23 @@ end;
 procedure TFrmLogin.lblCriarContaClick(Sender: TObject);
 begin
   ActConta.Execute;
+end;
+
+procedure TFrmLogin.SelecioneIcone(Sender: TObject);
+begin
+  with FrmLogin do begin
+    imgIcone1.Tag := 0;
+    imgIcone2.Tag := 0;
+    imgIcone3.Tag := 0;
+    imgIcone4.Tag := 0;
+    imgIcone5.Tag := 0;
+    imgIcone6.Tag := 0;
+    TImage(Sender).Tag := 1;
+
+    cSelecao.AnimateFloat('Position.X',TImage(Sender).Position.X +20-4,0.2);
+
+  end;
+
 end;
 
 end.
