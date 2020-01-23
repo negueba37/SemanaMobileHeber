@@ -34,6 +34,10 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure imgProximoClick(Sender: TObject);
     procedure imgAnteriorClick(Sender: TObject);
+    procedure imgNoticacaoClick(Sender: TObject);
+    procedure imgCadCompromissoClick(Sender: TObject);
+    procedure imgDicaClick(Sender: TObject);
+    procedure btnSairClick(Sender: TObject);
   private
     cal : TCustomCalendar;
     procedure DayClick(Sender:TObject);
@@ -49,9 +53,20 @@ var
 implementation
 
 uses
-  System.DateUtils;
+  System.DateUtils, UntCompromisso, untNotificacao, untLogin;
 
 {$R *.fmx}
+
+procedure TfrmPrincipal.btnSairClick(Sender: TObject);
+begin
+  if not Assigned(FrmLogin) then
+    Application.CreateForm(TFrmLogin,FrmLogin);
+
+  Application.MainForm := FrmLogin;
+  FrmLogin.Show;
+  frmPrincipal.Close;
+
+end;
 
 procedure TfrmPrincipal.DayClick(Sender: TObject);
 begin
@@ -83,6 +98,32 @@ procedure TfrmPrincipal.imgAnteriorClick(Sender: TObject);
 begin
   cal.PriorMonth;
   ListarCompromisso;
+end;
+
+procedure TfrmPrincipal.imgCadCompromissoClick(Sender: TObject);
+begin
+  if not Assigned(FrmCompromisso) then
+    Application.CreateForm(tFrmCompromisso,FrmCompromisso);
+
+  FrmCompromisso.Show;
+
+end;
+
+procedure TfrmPrincipal.imgDicaClick(Sender: TObject);
+begin
+  if not Assigned(FrmCompromisso) then
+    Application.CreateForm(tFrmCompromisso,FrmCompromisso);
+
+  FrmCompromisso.Show;
+
+end;
+
+procedure TfrmPrincipal.imgNoticacaoClick(Sender: TObject);
+begin
+  if not Assigned(frmNotificacao) then
+    Application.CreateForm(TfrmNotificacao,frmNotificacao);
+
+  frmNotificacao.Show;
 end;
 
 procedure TfrmPrincipal.imgProximoClick(Sender: TObject);

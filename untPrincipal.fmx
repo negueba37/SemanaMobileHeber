@@ -3,7 +3,7 @@ object frmPrincipal: TfrmPrincipal
   Top = 0
   Caption = 'Form1'
   ClientHeight = 518
-  ClientWidth = 338
+  ClientWidth = 320
   Fill.Color = xFFF8F8F8
   Fill.Kind = Solid
   Quality = HighQuality
@@ -16,20 +16,20 @@ object frmPrincipal: TfrmPrincipal
   object Rectangle1: TRectangle
     Align = Top
     Fill.Color = claWhite
-    Size.Width = 338.000000000000000000
+    Size.Width = 320.000000000000000000
     Size.Height = 100.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
     object Layout1: TLayout
       Align = Top
-      Size.Width = 338.000000000000000000
+      Size.Width = 320.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
       object Label4: TLabel
         Align = Contents
         StyledSettings = [Family, Style]
-        Size.Width = 338.000000000000000000
+        Size.Width = 320.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 18.000000000000000000
@@ -112,8 +112,10 @@ object frmPrincipal: TfrmPrincipal
         Size.Width = 50.000000000000000000
         Size.Height = 30.000000000000000000
         Size.PlatformDefault = False
+        OnClick = imgNoticacaoClick
         object cNotificacao: TCircle
           Fill.Color = xFFF06161
+          HitTest = False
           Position.X = 27.000000000000000000
           Position.Y = 5.000000000000000000
           Size.Width = 10.000000000000000000
@@ -125,25 +127,26 @@ object frmPrincipal: TfrmPrincipal
       object btnSair: TSpeedButton
         Align = Right
         StyledSettings = [Family, Style]
-        Position.X = 258.000000000000000000
+        Position.X = 240.000000000000000000
         Size.Width = 80.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         Text = 'Sair'
         TextSettings.Font.Size = 16.000000000000000000
         TextSettings.FontColor = xFF588CFC
+        OnClick = btnSairClick
       end
     end
     object Layout2: TLayout
       Align = Client
-      Size.Width = 338.000000000000000000
+      Size.Width = 320.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
       object lblMes: TLabel
         Align = Contents
         StyledSettings = [Family]
-        Size.Width = 338.000000000000000000
+        Size.Width = 320.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         TextSettings.Font.Size = 14.000000000000000000
@@ -209,7 +212,7 @@ object frmPrincipal: TfrmPrincipal
         Margins.Top = 5.000000000000000000
         Margins.Right = 5.000000000000000000
         Margins.Bottom = 5.000000000000000000
-        Position.X = 283.000000000000000000
+        Position.X = 265.000000000000000000
         Position.Y = 5.000000000000000000
         Size.Width = 50.000000000000000000
         Size.Height = 40.000000000000000000
@@ -221,14 +224,14 @@ object frmPrincipal: TfrmPrincipal
   object lytCalendario: TLayout
     Align = Top
     Position.Y = 100.000000000000000000
-    Size.Width = 338.000000000000000000
+    Size.Width = 320.000000000000000000
     Size.Height = 173.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
   end
   object lytSemCompromisso: TLayout
     Align = Client
-    Size.Width = 338.000000000000000000
+    Size.Width = 320.000000000000000000
     Size.Height = 245.000000000000000000
     Size.PlatformDefault = False
     Visible = False
@@ -237,7 +240,7 @@ object frmPrincipal: TfrmPrincipal
       Align = Top
       StyledSettings = [Family, Style]
       Position.Y = 70.000000000000000000
-      Size.Width = 338.000000000000000000
+      Size.Width = 320.000000000000000000
       Size.Height = 35.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 14.000000000000000000
@@ -417,7 +420,7 @@ object frmPrincipal: TfrmPrincipal
       Align = Top
       Margins.Top = 20.000000000000000000
       Position.Y = 20.000000000000000000
-      Size.Width = 338.000000000000000000
+      Size.Width = 320.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
     end
@@ -710,22 +713,23 @@ object frmPrincipal: TfrmPrincipal
             'dica-add-novo.png'
         end>
       Anchors = [akRight, akBottom]
-      Position.X = 167.000000000000000000
+      Position.X = 149.000000000000000000
       Position.Y = 124.000000000000000000
       Size.Width = 161.000000000000000000
       Size.Height = 113.000000000000000000
       Size.PlatformDefault = False
+      OnClick = imgDicaClick
     end
   end
   object lytComCompromisso: TLayout
     Align = Client
-    Size.Width = 338.000000000000000000
+    Size.Width = 320.000000000000000000
     Size.Height = 245.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 4
     object lbCompromisso: TListBox
       Align = Client
-      Size.Width = 338.000000000000000000
+      Size.Width = 320.000000000000000000
       Size.Height = 195.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'transparentlistboxstyle'
@@ -734,12 +738,12 @@ object frmPrincipal: TfrmPrincipal
       DefaultItemStyles.ItemStyle = ''
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
-      Viewport.Width = 338.000000000000000000
+      Viewport.Width = 320.000000000000000000
       Viewport.Height = 195.000000000000000000
     end
     object Layout3: TLayout
       Align = Top
-      Size.Width = 338.000000000000000000
+      Size.Width = 320.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
@@ -834,6 +838,7 @@ object frmPrincipal: TfrmPrincipal
           Align = Right
           Margins.Right = -50.000000000000000000
           Position.X = 153.000000000000000000
+          OnClick = imgCadCompromissoClick
         end
       end
     end

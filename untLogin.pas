@@ -14,7 +14,6 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Layout1: TLayout;
-    Label4: TLabel;
     edtUsuarioLogin: TEdit;
     Rectangle1: TRectangle;
     Layout3: TLayout;
@@ -36,7 +35,6 @@ type
     Label3: TLabel;
     Label5: TLabel;
     Layout8: TLayout;
-    Label6: TLabel;
     Edit1: TEdit;
     Rectangle2: TRectangle;
     SpeedButton1: TSpeedButton;
