@@ -4,7 +4,8 @@ uses
   System.StartUpCopy,
   FMX.Forms,
   untLogin in 'untLogin.pas' {FrmLogin},
-  untPrincipal in 'untPrincipal.pas' {frmPrincipal};
+  untPrincipal in 'untPrincipal.pas' {frmPrincipal},
+  uCustomCalendar in 'uCustomCalendar.pas';
 
 {$R *.res}
 
