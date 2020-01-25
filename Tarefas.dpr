@@ -7,7 +7,13 @@ uses
   untPrincipal in 'untPrincipal.pas' {frmPrincipal},
   uCustomCalendar in 'uCustomCalendar.pas',
   untNotificacao in 'untNotificacao.pas' {frmNotificacao},
-  UntCompromisso in 'UntCompromisso.pas' {FrmCompromisso};
+  UntCompromisso in 'UntCompromisso.pas' {FrmCompromisso},
+  UnitNotificacaoDados in 'UnitNotificacaoDados.pas',
+  UnitCompromisso in 'UnitCompromisso.pas',
+  UnitNotificacaoFrame in 'UnitNotificacaoFrame.pas' {FrameNotificacao: TFrame},
+  UnitCompromissoFrame in 'UnitCompromissoFrame.pas' {FrameCompromisso: TFrame},
+  UnitCompromissoUsuarioDados in 'UnitCompromissoUsuarioDados.pas',
+  UnitCompromissoUsuario in 'UnitCompromissoUsuario.pas' {FrameCompromissoUsuario: TFrame};
 
 {$R *.res}
 

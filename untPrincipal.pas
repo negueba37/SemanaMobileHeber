@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
   FMX.ListBox, FMX.StdCtrls, FMX.Objects, FMX.Controls.Presentation,
-  uCustomCalendar;
+  uCustomCalendar,UnitCompromisso;
 
 type
   TfrmPrincipal = class(TForm)
@@ -42,6 +42,7 @@ type
     cal : TCustomCalendar;
     procedure DayClick(Sender:TObject);
     procedure ListarCompromisso();
+    procedure CriaFrame(c:TCompromisso);
      { Private declarations }
   public
     { Public declarations }
@@ -53,7 +54,8 @@ var
 implementation
 
 uses
-  System.DateUtils, UntCompromisso, untNotificacao, untLogin;
+  System.DateUtils, UntCompromisso, untNotificacao, untLogin,
+  UnitCompromissoFrame;
 
 {$R *.fmx}
 
@@ -65,6 +67,41 @@ begin
   Application.MainForm := FrmLogin;
   FrmLogin.Show;
   frmPrincipal.Close;
+
+end;
+
+procedure TfrmPrincipal.CriaFrame(c:TCompromisso);
+var
+  f : TFrameCompromisso;
+  item:TListBoxItem;
+begin
+  item := TListBoxItem.Create(nil);
+  with item do begin
+    Text := '';
+    Height := 120;
+    Align := TAlignLayout.Client;
+    Tag := c.seqCompromisso;
+  end;
+  f := TFrameCompromisso.Create(item);
+  with f do begin
+    Parent := item;
+    Align := TAlignLayout.Client;
+
+
+    lblNome.Text := c.codUsuario;
+    lblData.Text := c.data;
+    lblHora.Text := c.hora;
+    lblTexto.Text := c.descricao;
+    lblQtConfirmados.Text := c.qtParticipante.ToString;
+
+
+    if c.indConcluido = 'S' then
+      f.imgConcluido.Visible := True
+    else
+      f.imgConcluido.Visible := False;
+
+    frmPrincipal.lbCompromisso.AddObject(item);
+  end;
 
 end;
 
@@ -134,10 +171,14 @@ begin
 end;
 
 procedure TfrmPrincipal.ListarCompromisso;
+var
+  c:TCompromisso;
+  i:integer;
 begin
   lblMes.Text := cal.MonthName;
   lblDia.Text := 'Atividades do dia '+FormatDateTime('DD/MM',cal.SelectedDate);
 
+  frmPrincipal.lbCompromisso.Clear;
   //Buscar compromisso no servidor
   cal.AddMarker(6);
   cal.AddMarker(15);
@@ -154,6 +195,19 @@ begin
         lblSemCompromisso.Text := 'Sem compromisso em '+FormatDateTime('DD/MM',cal.SelectedDate);
       end;
 
+  for I := 1 to 5 do begin
+    c.seqCompromisso := i;
+    c.codUsuario  := 'Gabriel';
+    c.data :=  '23/01';
+    c.hora := '00:00 h';
+    c.descricao := 'Programar filhote';
+    c.indConcluido := 'N';
+    c.qtParticipante := i;
+
+    CriaFrame(c);
+
+
+  end;
 
 
 

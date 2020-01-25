@@ -1,0 +1,23 @@
+object FrameCompromissoUsuario: TFrameCompromissoUsuario
+  Size.Width = 414.000000000000000000
+  Size.Height = 42.000000000000000000
+  Size.PlatformDefault = False
+  object CircleIcone: TCircle
+    Align = Left
+    Fill.Bitmap.WrapMode = TileStretch
+    Fill.Kind = Bitmap
+    Size.Width = 50.000000000000000000
+    Size.Height = 42.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+  end
+  object lblNomeUsuario: TLabel
+    Align = Client
+    Margins.Left = 3.000000000000000000
+    Size.Width = 361.000000000000000000
+    Size.Height = 42.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Gabriel'
+    TabOrder = 1
+  end
+end

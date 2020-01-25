@@ -9,6 +9,7 @@ object frmNotificacao: TfrmNotificacao
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnClose = FormClose
+  OnShow = FormShow
   DesignerMasterStyle = 3
   object Layout1: TLayout
     Align = Top

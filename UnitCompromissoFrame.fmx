@@ -1,0 +1,130 @@
+object FrameCompromisso: TFrameCompromisso
+  Size.Width = 442.000000000000000000
+  Size.Height = 120.000000000000000000
+  Size.PlatformDefault = False
+  object Rectangle1: TRectangle
+    Align = Client
+    Fill.Color = xFFE6E6E6
+    Margins.Left = 10.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 10.000000000000000000
+    Margins.Bottom = 10.000000000000000000
+    Size.Width = 422.000000000000000000
+    Size.Height = 100.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    XRadius = 10.000000000000000000
+    YRadius = 10.000000000000000000
+    object Layout2: TLayout
+      Align = Client
+      Margins.Left = 8.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 8.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Size.Width = 406.000000000000000000
+      Size.Height = 84.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Layout3: TLayout
+        Align = Top
+        Size.Width = 406.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object lblTexto: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Margins.Left = 3.000000000000000000
+          Size.Width = 359.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.FontColor = xFF322C2C
+          Text = 'Programar o BackEnd novo '
+          TabOrder = 1
+        end
+        object lblData: TLabel
+          Align = Right
+          StyledSettings = [Family, Style]
+          Margins.Right = 3.000000000000000000
+          Position.X = 362.000000000000000000
+          Size.Width = 41.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.FontColor = xFF908686
+          TextSettings.HorzAlign = Trailing
+          Text = '23/01'
+          TabOrder = 0
+        end
+      end
+      object Layout4: TLayout
+        Align = Bottom
+        Position.Y = 52.000000000000000000
+        Size.Width = 406.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object imgTipoCompromisso: TImage
+          MultiResBitmap = <
+            item
+            end>
+          Align = Left
+          Size.Width = 40.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object imgConcluido: TImage
+          MultiResBitmap = <
+            item
+            end>
+          Align = Right
+          Position.X = 366.000000000000000000
+          Size.Width = 40.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object lblQtConfirmados: TLabel
+          Align = Left
+          StyledSettings = [Family, Style]
+          Margins.Left = 5.000000000000000000
+          Position.X = 45.000000000000000000
+          Size.Width = 34.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = xFF877272
+          Text = '17'
+          TabOrder = 2
+        end
+      end
+      object lblNome: TLabel
+        Align = Left
+        StyledSettings = [Family, Style]
+        Margins.Left = 3.000000000000000000
+        Position.X = 3.000000000000000000
+        Position.Y = 25.000000000000000000
+        Size.Width = 318.000000000000000000
+        Size.Height = 27.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = xFF877272
+        Text = 'Gabriel'
+        TabOrder = 2
+      end
+      object lblHora: TLabel
+        Align = Right
+        StyledSettings = [Family, Style]
+        Margins.Right = 3.000000000000000000
+        Position.X = 333.000000000000000000
+        Position.Y = 25.000000000000000000
+        Size.Width = 70.000000000000000000
+        Size.Height = 27.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.FontColor = xFF908686
+        TextSettings.HorzAlign = Trailing
+        Text = '00:00 h'
+        TabOrder = 0
+      end
+    end
+  end
+end

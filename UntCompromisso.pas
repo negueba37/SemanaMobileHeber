@@ -6,7 +6,8 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
   FMX.ListBox, FMX.StdCtrls, FMX.DateTimeCtrls, FMX.Edit, FMX.Objects,
-  FMX.Controls.Presentation, System.Actions, FMX.ActnList, FMX.TabControl;
+  FMX.Controls.Presentation, System.Actions, FMX.ActnList, FMX.TabControl,
+  UnitCompromissoFrame, UnitCompromissoUsuarioDados,UnitCompromissoUsuario;
 
 type
   TFrmCompromisso = class(TForm)
@@ -22,7 +23,7 @@ type
     btnSair: TSpeedButton;
     Label1: TLabel;
     imgCadPartici: TImage;
-    lbNotificacao: TListBox;
+    lbBuscaItens: TListBox;
     TabControl: TTabControl;
     TabCompromisso: TTabItem;
     TabBusca: TTabItem;
@@ -41,6 +42,9 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
   private
+    procedure ListarBusca();
+    procedure CriaFrame(c:TCompromissoUsuario);
+
     { Private declarations }
   public
     { Public declarations }
@@ -52,6 +56,33 @@ var
 implementation
 
 {$R *.fmx}
+
+
+procedure TFrmCompromisso.CriaFrame(c: TCompromissoUsuario);
+var
+  item : TListBoxItem;
+  f:  TFrameCompromissoUsuario;
+begin
+  item := TListBoxItem.Create(nil);
+  with item do begin
+    Text := '';
+    Height := 120;
+    Align := TAlignLayout.Client;
+    Tag := c.seqCompromisso;
+  end;
+
+  f := TFrameCompromissoUsuario.Create(item);
+  with f do begin
+    Parent := item;
+    Align := TAlignLayout.Client;
+
+    CircleIcone.Fill.Bitmap.Bitmap := c.icone;
+    lblNomeUsuario.Text := c.codusuario;
+
+    lbBuscaItens.AddObject(item);
+  end;
+
+end;
 
 procedure TFrmCompromisso.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
@@ -80,6 +111,23 @@ end;
 procedure TFrmCompromisso.imgVoltarClick(Sender: TObject);
 begin
   actCompromisso.Execute;
+end;
+
+procedure TFrmCompromisso.ListarBusca;
+var
+  C:TCompromissoUsuario;
+  x:Integer;
+begin
+  FrmCompromisso.lbBuscaItens.Items.Clear;
+  for x := 1 to 5 do begin
+    c.seqCompromisso := x;
+    c.icone := imgFechar.Bitmap;
+    c.codusuario := 'Giovane';
+
+    CriaFrame(c);
+
+
+  end;
 end;
 
 end.
